@@ -9,6 +9,7 @@ public class BrowserConfig {
         Configuration.browser = browser;
         Configuration.driverManagerEnabled = true;
         Configuration.browserSize = "1920x1080";
+        Configuration.headless = true;
     }
 
     public void quitDriver(){
