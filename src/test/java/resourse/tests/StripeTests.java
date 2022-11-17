@@ -79,8 +79,10 @@ public class StripeTests {
 
         adminLogin.openAdminPage();
         assertTrue(adminLogin.loginPageIsLoaded());
+        System.out.println("On Login Screen");
         adminLogin.loginWithValidCredentials();
         assertTrue(homeSteps.homePageIsLoaded());
+        System.out.println("Logged in");
         pillsSteps.clickCustomersNav();
         assertTrue(customersSteps.isOnCustomersScreen());
         assertEquals(customersSteps.getLastCustomerEmail(), BASE+"@marjan.com");
