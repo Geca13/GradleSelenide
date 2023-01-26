@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class BrowserConfig {
 
     public void setBrowserSettings(String browser) {
-        if(!browser.equals(null)){
+        if(!browser.equals("")){
             Configuration.browser = browser;
             Configuration.driverManagerEnabled = true;
             Configuration.browserSize = "1920x1080";
