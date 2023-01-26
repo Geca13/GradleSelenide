@@ -26,7 +26,7 @@ public class StripeTests {
 
     @BeforeEach
     public void setup(){
-        config.setBrowserSettings(null);
+        config.setBrowserSettings("");
     }
 
     @AfterEach
