@@ -18,9 +18,9 @@ permissions:
 jobs:
   test-chrome:
     env:
-      BROWSER: safari
+      BROWSER: chrome
 
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
