@@ -18,7 +18,7 @@ permissions:
 jobs:
   test-chrome:
     env:
-      BROWSER: chrome
+      BROWSER: firefox
 
     runs-on: windows-latest
 
