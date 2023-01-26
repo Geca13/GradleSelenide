@@ -4,14 +4,31 @@ import com.codeborne.selenide.Configuration;
 import static com.codeborne.selenide.Selenide.*;
 public class BrowserConfig {
 
-    public void setBrowserSettings(String browser){
-        Configuration.browser = browser;
-        Configuration.driverManagerEnabled = true;
-        Configuration.browserSize = "1920x1080";
-        Configuration.headless = false;
+    public void setBrowserSettings(String browser) {
+        if(!browser.equals(null)){
+            Configuration.browser = browser;
+            Configuration.driverManagerEnabled = true;
+            Configuration.browserSize = "1920x1080";
+            Configuration.headless = false;
+        }else {
+            Configuration.driverManagerEnabled = true;
+            Configuration.browserSize = "1920x1080";
+            Configuration.headless = true;
+            String env = System.getenv("BROWSER");
+            if(env.equalsIgnoreCase("chrome")){
+                Configuration.browser = "chrome";
+            } else if (env.equalsIgnoreCase("firefox")) {
+                Configuration.browser = "firefox";
+            } else if (env.equalsIgnoreCase("safari")) {
+                Configuration.browser = "safari";
+            } else {
+                Configuration.browser = "edge";
+            }
+        }
     }
 
     public void quitDriver(){
         closeWebDriver();
     }
 }
+
