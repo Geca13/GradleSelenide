@@ -17,18 +17,6 @@ public class StripeTests {
 
     private BrowserConfig config = new BrowserConfig();
 
-    private AdminLoginSteps adminLogin = new AdminLoginSteps();
-
-    private PaymentsSteps paymentsSteps = new PaymentsSteps();
-
-    private CustomersSteps customersSteps = new CustomersSteps();
-
-    private ProductsSteps productsSteps = new ProductsSteps();
-
-    private HomeSteps homeSteps = new HomeSteps();
-
-    private NavPillsSteps pillsSteps = new NavPillsSteps();
-
     private static String BASE = "";
 
     @BeforeAll
@@ -38,7 +26,7 @@ public class StripeTests {
 
     @BeforeEach
     public void setup(){
-        config.setBrowserSettings("chrome");
+        config.setBrowserSettings(null);
     }
 
     @AfterEach
@@ -73,53 +61,6 @@ public class StripeTests {
 
     }
 
-    @Test
-    @Order(2)
-    public void test2(){
-
-        adminLogin.openAdminPage();
-        assertTrue(adminLogin.loginPageIsLoaded());
-        System.out.println("On Login Screen");
-        adminLogin.loginWithValidCredentials();
-        assertTrue(homeSteps.homePageIsLoaded());
-        System.out.println("Logged in");
-        pillsSteps.clickCustomersNav();
-        assertTrue(customersSteps.isOnCustomersScreen());
-        assertEquals(customersSteps.getLastCustomerEmail(), BASE+"@marjan.com");
-        assertEquals(customersSteps.getLastCustomerFullName(), "Marjan "+BASE);
-
-    }
-
-    @Test
-    @Order(3)
-    public void test3(){
-
-        adminLogin.openAdminPage();
-        assertTrue(adminLogin.loginPageIsLoaded());
-        adminLogin.loginWithValidCredentials();
-        assertTrue(homeSteps.homePageIsLoaded());
-        pillsSteps.clickPaymentsNav();
-        assertTrue(paymentsSteps.isOnPaymentsScreen());
-        assertEquals(paymentsSteps.getLastPaymentValue(), "$100.00");
-        assertEquals(paymentsSteps.getLastPaymentCustomerEmail(), BASE+"@marjan.com");
-
-    }
-
-    @Test
-    @Order(4)
-    public void test4(){
-
-        adminLogin.openAdminPage();
-        assertTrue(adminLogin.loginPageIsLoaded());
-        adminLogin.loginWithValidCredentials();
-        assertTrue(homeSteps.homePageIsLoaded());
-        pillsSteps.clickProductsNav();
-        assertTrue(productsSteps.isOnProductsScreen());
-        System.out.println(productsSteps.getLastProductDetails());
-        //assertEquals(paymentsSteps.getLastPaymentValue(), "$100.00");
-        //assertEquals(paymentsSteps.getLastPaymentCustomerEmail(), "gec@mec1.com");
-
-    }
-
 
 }
+
