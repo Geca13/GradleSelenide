@@ -38,7 +38,7 @@ public class StripeTests {
     @Test
     @Order(1)
     public void test1() throws InterruptedException {
-
+        System.out.println("Test Started");
         checkout.navigateTo100ProductStripePage();
         assertTrue(checkout.checkoutButtonIsDisplayed());
         checkout.fillEmailInputWithValidEmail(BASE);
@@ -58,7 +58,7 @@ public class StripeTests {
         assertTrue(confirmation.thankYouMessageIsDisplayed());
         String paid = confirmation.getPaidValue();
         assertEquals(paid, product.getProductPrice());
-
+        System.out.println("Test Completed");
     }
 
 
