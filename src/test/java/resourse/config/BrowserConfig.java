@@ -20,7 +20,8 @@ public class BrowserConfig {
             } else if (env.equalsIgnoreCase("firefox")) {
                 Configuration.browser = "firefox";
             } else if (env.equalsIgnoreCase("safari")) {
-                Configuration.browser = “org.openqa.selenium.safari.SafariDriver"; 
+              Configuration.browser = "org.openqa.selenium.safari.SafariDriver";
+
             } else {
                 Configuration.browser = "edge";
             }
