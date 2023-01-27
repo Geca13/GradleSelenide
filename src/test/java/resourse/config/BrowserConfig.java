@@ -20,7 +20,7 @@ public class BrowserConfig {
             } else if (env.equalsIgnoreCase("firefox")) {
                 Configuration.browser = "firefox";
             } else if (env.equalsIgnoreCase("safari")) {
-                Configuration.browser = "safari";
+                WebDriverRunner.setWebDriver(new SafariDriver());    
             } else {
                 Configuration.browser = "edge";
             }
