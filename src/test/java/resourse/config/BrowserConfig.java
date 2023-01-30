@@ -1,6 +1,8 @@
 package resourse.config;
 import com.codeborne.selenide.Configuration;
-
+import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import static com.codeborne.selenide.Selenide.*;
 public class BrowserConfig {
 
