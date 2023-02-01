@@ -17,7 +17,7 @@ permissions:
 jobs:
   test-chrome-ubuntu:
     env:
-      BROWSER: chrome
+      BROWSER: safari
 
     runs-on: macOS-latest
 
