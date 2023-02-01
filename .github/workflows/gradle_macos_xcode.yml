@@ -1,4 +1,4 @@
-name: Java CI with Gradle on macOS
+name: Java CI with Gradle on macOS and xcode
 
 on:
   push:
