@@ -15,7 +15,7 @@ on:
 jobs:
   test-chrome-ubuntu:
     env:
-      BROWSER: chrome
+      BROWSER: firefox
 
     runs-on: ubuntu-latest
 
