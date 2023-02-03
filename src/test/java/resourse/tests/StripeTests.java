@@ -54,7 +54,7 @@ public class StripeTests {
         checkout.fillCountrySelectWithValidCountry();
         Thread.sleep(500);
         checkout.clickCheckoutButton();
-        Thread.sleep(50000);
+        Thread.sleep(5000);
         assertTrue(confirmation.thankYouMessageIsDisplayed());
         String paid = confirmation.getPaidValue();
         assertEquals(paid, product.getProductPrice());
